@@ -1,6 +1,5 @@
 package com.example.coroutinepractice.corutine
 
-import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 
 fun main(): Unit = runBlocking {
@@ -46,3 +45,10 @@ suspend fun call2(num: Int): Int {
 //suspend fun c() {
 //    printWithThread("C")
 //}
+
+fun test() {
+    val list = mutableListOf<Person>()
+    list.add(Person("aa", 2))
+}
+
+data class Person(val name: String, val age: Int)
