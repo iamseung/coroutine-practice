@@ -1,6 +1,8 @@
 package com.example.coroutinepractice.corutine
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 
 fun main(): Unit = runBlocking {
     // async, 결과값을 반환하는 코루틴 빌더
@@ -14,12 +16,16 @@ fun main(): Unit = runBlocking {
 }
 
 suspend fun call1(): Int {
-    Thread.sleep(1_000L)
+    withContext(Dispatchers.IO) {
+        Thread.sleep(1_000L)
+    }
     return 100
 }
 
 suspend fun call2(num: Int): Int {
-    Thread.sleep(1_000L)
+    withContext(Dispatchers.IO) {
+        Thread.sleep(1_000L)
+    }
     return num * 100
 }
 
