@@ -58,3 +58,9 @@ fun test() {
 }
 
 data class Person(val name: String, val age: Int)
+
+fun testt() {
+    var list = mutableListOf<String>()
+
+    list = mutableListOf("a", "b", "c")
+}
